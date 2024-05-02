@@ -1,0 +1,71 @@
+.ProcessItem {
+  min-height: 75vh;
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+.ProcessItem-icon-container {
+  width: 75%;
+  aspect-ratio: 1;
+  margin: calc(var(--space) * 2) auto var(--space) auto;
+  background-color: var(--bg-content-color);
+  color: var(--title-color);
+  border-radius: 50%;
+  padding: 3rem;
+  background-position: center center;
+  background-size: cover;
+}
+
+.ProcessItem-text {
+  font-family: "Ubuntu Mono", monospace;
+  height: fit-content;
+  width: 100%;
+  padding: 2rem;
+  margin: auto;
+}
+
+.ProcessItem-button-container {
+  height: fit-content;
+  width: fit-content;
+  padding: 1px;
+  background-color: var(--primary-color);
+  clip-path: var(--clip-path-center);
+  margin: 2rem 2rem auto auto;
+}
+
+.ProcessItem-button {
+  display: block;
+  background-color: var(--bg-content-color);
+  color: var(--primary-color);
+  padding: calc(var(--space) / 5) var(--space);
+  text-align: center;
+  clip-path: var(--clip-path-center);
+  font-weight: bold;
+}
+
+.ProcessItem-button:hover {
+  background-color: var(--bg-color);
+  transition: 0.25s;
+}
+
+@media screen and (min-width: 768px) {
+  .ProcessItem-icon-container {
+    margin: var(--space) auto;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .ProcessItem {
+    grid-template-columns: 40% 60%;
+  }
+
+  .ProcessItem-icon-container {
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .ProcessItem-text {
+    padding: 1rem;
+  }
+}

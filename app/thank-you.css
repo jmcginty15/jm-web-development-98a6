@@ -1,0 +1,79 @@
+.ThankYou {
+  background-position: center center;
+  background-size: cover;
+  height: calc(100% - 2 * var(--header-height));
+}
+
+.ThankYou-overlay {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: var(--bg-content-color-transparent);
+}
+
+.ThankYou-content {
+  margin: auto;
+  max-width: 100%;
+  height: fit-content;
+  width: 90%;
+}
+
+.ThankYou-title {
+  font-size: 48px;
+  margin: 0 auto 1.5rem auto;
+  text-align: center;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.ThankYou-subtitle {
+  font-size: 18px;
+  font-family: "Ubuntu Mono", monospace;
+  text-align: center;
+}
+
+.ThankYou-link {
+  margin-top: 1.5rem;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+@media screen and (min-width: 300px) {
+  .ThankYou-title {
+    font-size: 72px;
+  }
+
+  .ThankYou-subtitle {
+    font-size: 20px;
+  }
+
+  .ThankYou-content {
+    width: 85%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .ThankYou-title {
+    font-size: 96px;
+  }
+
+  .ThankYou-subtitle {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .ThankYou {
+    height: calc(100vh - var(--header-height));
+  }
+
+  .ThankYou-title {
+    font-size: 100px;
+  }
+
+  .ThankYou-subtitle {
+    font-size: 28px;
+  }
+}

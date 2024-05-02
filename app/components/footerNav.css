@@ -1,0 +1,71 @@
+.FooterNav {
+  background-color: var(--bg-color);
+  border-top: 1px solid var(--border-color);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  z-index: 10;
+}
+
+@media screen and (min-width: 960px) {
+  .FooterNav {
+    display: none;
+  }
+}
+
+.FooterNav-Link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-shrink: 1;
+  text-decoration: none;
+  color: var(--title-color) !important;
+  font-size: 0.8rem;
+  line-height: 1;
+  position: relative;
+  height: var(--header-height);
+}
+
+.FooterNav-Link > svg {
+  margin-bottom: 0.4rem;
+  fill: var(--title-color);
+}
+
+.FooterNav-Link.active {
+  font-weight: 700;
+  border-bottom: none !important;
+  border-top: 2px solid var(--primary-color);
+}
+
+.FooterNav-Link.active > svg {
+  fill: var(--primary-color);
+}
+
+.FooterNav-Link:hover {
+  color: var(--primary-color) !important;
+}
+
+.FooterNav-Link:hover > svg {
+  fill: var(--primary-color);
+}
+
+#about,
+#process,
+#portfolio {
+  margin: 0.25rem;
+  color: var(--title-color);
+  font-size: 24px;
+}
+
+#about:hover,
+#process:hover,
+#portfolio:hover {
+  color: var(--primary-color);
+}

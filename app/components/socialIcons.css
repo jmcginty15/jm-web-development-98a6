@@ -1,0 +1,29 @@
+.SocialIcons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: var(--header-height);
+}
+
+.SocialIcons {
+  display: flex;
+}
+
+.SocialIcons > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#linkedin,
+#github {
+  margin: 0.5rem;
+  color: var(--title-color);
+  font-size: 30px;
+}
+
+#linkedin:hover,
+#github:hover {
+  color: var(--primary-color);
+}

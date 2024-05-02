@@ -1,0 +1,196 @@
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  height: fit-content;
+}
+
+.Banner {
+  height: calc(100vh - 2 * var(--header-height));
+  width: 100vw;
+  font-family: "Ubuntu Mono", monospace;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.Banner-overlay {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: var(--bg-content-color-transparent);
+  justify-content: center;
+}
+
+.Banner-content {
+  height: fit-content;
+  text-align: center;
+  width: 85%;
+  margin: auto;
+  padding: 30px 0;
+}
+
+.Banner-content-inner {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin: auto;
+  text-align: center;
+}
+
+.Banner-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 32px;
+  margin: auto;
+  margin-bottom: calc(var(--space) / 2);
+}
+
+.Banner-subtitle {
+  margin: auto;
+  margin-bottom: calc(var(--space));
+}
+
+.Banner-logo {
+  width: 85%;
+  color: var(--primary-color);
+  margin: auto;
+  margin-bottom: calc(var(--space) * 1.5);
+}
+
+.Banner-highlight {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.Banner-tagline {
+  font-size: 18px;
+}
+
+#down-arrow {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  animation-name: downarrowlow;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+#down-arrow:hover {
+  cursor: pointer;
+  animation: none;
+  color: var(--secondary-color);
+  font-size: 84px;
+  bottom: 6px;
+}
+
+@media screen and (min-width: 650px) {
+  .Banner-logo {
+    width: 40%;
+    margin-bottom: calc(var(--space) / 2);
+  }
+
+  .Banner-title {
+    font-size: 48px;
+    margin-bottom: calc(var(--space) * 0.35);
+  }
+
+  .Banner-subtitle {
+    margin-bottom: calc(var(--space) * 0.5);
+  }
+
+  #down-arrow {
+    animation: downarrow;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .Banner {
+    height: calc(100vh - var(--header-height));
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .Banner-title {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .Banner-title {
+    font-size: 20px;
+  }
+
+  .Banner-tagline {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-height: 700px) {
+  .Banner-content {
+    padding: 30px 0;
+  }
+
+  .Banner-content-inner {
+    max-width: 100%;
+  }
+
+  .Banner-logo {
+    width: 30%;
+    margin-bottom: calc(var(--space) * 0.35);
+  }
+
+  .Banner-title {
+    font-size: 36px;
+    margin-bottom: calc(var(--space) * 0.35);
+  }
+
+  .Banner-subtitle {
+    margin-bottom: calc(var(--space) * 0.35);
+  }
+}
+
+@keyframes downarrow {
+  0% {
+    color: var(--title-color);
+    font-size: 80px;
+    bottom: 10px;
+  }
+
+  50% {
+    color: var(--primary-color);
+    font-size: 82px;
+    bottom: 8px;
+  }
+
+  100% {
+    color: var(--title-color);
+    font-size: 80px;
+    bottom: 10px;
+  }
+}
+
+@keyframes downarrowlow {
+  0% {
+    color: var(--title-color);
+    font-size: 80px;
+    bottom: 0px;
+  }
+
+  50% {
+    color: var(--primary-color);
+    font-size: 82px;
+    bottom: 2px;
+  }
+
+  100% {
+    color: var(--title-color);
+    font-size: 80px;
+    bottom: 0px;
+  }
+}

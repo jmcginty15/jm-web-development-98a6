@@ -1,0 +1,487 @@
+/* BASE */
+
+html {
+  --base-font-size: 20px;
+}
+
+body {
+  --bg-color: #153243;
+  --bg-content-color: #284b63;
+  --bg-content-color-transparent: rgba(40, 75, 99, 0.65);
+  --title-color: #fff;
+  --body-color: #eeebd3;
+  --primary-color: #f7c548;
+  --primary-color-transparent: rgba(247, 197, 72, 0.65);
+  --secondary-color: #a98743;
+  --disabled-color: #888;
+  --radius: 6px;
+  --space: 3.5rem;
+  --header-height: 80px;
+  --content-width: 860px;
+  --transition-fast: 0.2s;
+  --transition-normal: 0.4s;
+  --transition-slow: 0.6s;
+  --bg-code: rgba(0, 0, 0, 0.3);
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+.background-image {
+  display: none;
+}
+
+@media screen and (max-width: 650px) {
+  html {
+    --base-font-size: 17px;
+  }
+
+  body {
+    --space: 1.5rem;
+    --header-height: 60px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-content-color);
+  color: var(--body-color);
+  transition: color var(--transition-normal),
+    background-color var(--transition-normal);
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+a:not(.button) {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+a:not(.button).active {
+  color: var(--primary-color);
+  border-bottom: 2px solid currentColor;
+}
+
+a:not(.button):hover {
+  color: var(--secondary-color);
+}
+
+/* FIXME: Figure out how to override the chrome focus ring color for the outline */
+/* :focus {
+  outline-color: var(--primary-color);
+}
+::selection {
+  background: var(--primary-color);
+} */
+
+img {
+  max-width: 100%;
+}
+
+#gatsby-focus-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100vh;
+}
+
+/* CODE */
+
+/* PrismJS 1.15.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+pre {
+  padding: calc(var(--space) / 2);
+  font-size: 0.85em;
+  background-color: var(--bg-code);
+  margin-bottom: 2em;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+}
+
+code {
+  background-color: var(--bg-code);
+  border: 1px solid var(--border-color);
+  font-size: 0.85em;
+  padding: 0.2em 0.5em;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+@media print {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  overflow: auto;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  border-radius: var(--radius);
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: slategray;
+}
+
+.token.punctuation {
+  color: #999;
+}
+
+.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #c71b7b;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #9a6e3a;
+  background: hsla(0, 0%, 100%, 0.5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #20a7e0;
+}
+
+.token.function,
+.token.class-name {
+  color: #dd4a68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #e90;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+/* RESET */
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* SCROLL */
+
+.scroll-top-button-container {
+  position: fixed;
+  right: -100px;
+  bottom: 150px;
+  transition: right var(--transition-fast);
+  background-color: var(--bg-content-color);
+  border-radius: var(--radius);
+}
+
+.scroll-top-button-transition {
+  right: 10px;
+}
+
+/* TYPOGRAPHY */
+
+html {
+  font-size: var(--base-font-size);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+p {
+  margin-bottom: 1.25em;
+}
+
+h1 h2 h3 h4 h5 {
+  transition: color var(--transition-slow);
+  color: var(--title-color);
+  margin: 2.75rem 0 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 1.802em;
+}
+
+h2 {
+  font-size: 1.602em;
+}
+
+h3 {
+  font-size: 1.424em;
+}
+
+h4 {
+  font-size: 1.266em;
+}
+
+h5 {
+  font-size: 1.125em;
+}
+
+small {
+  font-size: 0.889em;
+}
+
+strong {
+  font-weight: 600;
+}
+
+blockquote {
+  border-left: 4px solid var(--border-color);
+  padding-left: calc((var(--space) / 2));
+  color: var(--title-color);
+}
+
+em {
+  font-style: italic;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+ul > li {
+  margin-bottom: 0.6em;
+}
+
+ol {
+  list-style-type: decimal;
+  margin-left: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+ol > li {
+  margin-bottom: 0.6em;
+}
+
+table {
+  border: solid var(--border-color);
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table > tr {
+  border: solid var(--border-color);
+}
+
+table > td {
+  border: solid var(--border-color);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+table > th {
+  border: solid var(--border-color);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+}

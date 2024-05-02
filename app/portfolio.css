@@ -1,0 +1,71 @@
+.Portfolio-index {
+  font-family: "Ubuntu Mono", monospace;
+  padding: 2rem 0;
+  /* height: 100vh; */
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 8vh;
+}
+
+.Portfolio-index-title {
+  color: var(--primary-color);
+  margin: auto;
+  text-align: center;
+}
+
+.PortfolioItemDetail {
+  display: grid;
+  width: 92%;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+.PortfolioItemDetail-photo {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: 1px 1px 8px black;
+}
+
+#PortfolioItemDetail-back-button {
+  display: block;
+  text-align: center;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: var(--bg-color) !important;
+  font-weight: bold;
+  font-size: 20px;
+  border: outset 2px var(--bg-content-color);
+  border-radius: var(--radius);
+  margin: 1.5rem auto 0 0;
+  font-family: "Ubuntu Mono", monospace;
+}
+
+#PortfolioItemDetail-back-button:hover {
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  transition: 0.25s;
+}
+
+@media screen and (min-width: 600px) {
+  .Portfolio-index {
+    column-gap: 6%;
+    grid-template-columns: 47% 47%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .Portfolio-index {
+    column-gap: 5%;
+    grid-template-columns: 30% 30% 30%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .PortfolioItemDetail {
+    grid-template-columns: 38% 58%;
+    column-gap: 4%;
+  }
+}

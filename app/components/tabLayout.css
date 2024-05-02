@@ -1,0 +1,74 @@
+.TabLayout {
+  position: relative;
+  width: 90vw;
+  margin: auto;
+  background-color: var(--title-color);
+  color: var(--bg-color);
+  top: calc(var(--space) * -1 - 15px);
+  border: solid var(--bg-color) 2px;
+  border-radius: var(--radius);
+}
+
+.TabLayout-tabs {
+  display: grid;
+  grid-template-columns: calc(100% / 2) calc(100% / 2);
+  background-color: var(--bg-color);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.TabLayout-button-container {
+  height: 100%;
+  width: 100%;
+}
+
+.TabLayout-button {
+  display: flex;
+  align-items: center;
+  background-color: var(--title-color);
+  width: 100%;
+  padding: calc(var(--space) / 5);
+  text-align: center;
+  color: var(--bg-color) !important;
+  border-bottom: solid var(--bg-color) 2px;
+  border-left: solid var(--bg-color) 1px;
+  border-right: solid var(--bg-color) 1px;
+}
+
+.TabLayout-button-inner {
+  width: 100%;
+}
+
+#TabLayout-button-active {
+  background-color: var(--bg-content-color);
+  color: var(--primary-color) !important;
+}
+
+.TabLayout-button:hover {
+  cursor: pointer;
+  background-color: var(--primary-color);
+  transition: 0.25s;
+}
+
+.TabLayout-button-left {
+  border-radius: calc(var(--radius) - 2px) 0 0 0;
+  border-left: none;
+}
+
+.TabLayout-button-right {
+  border-radius: 0 calc(var(--radius) - 2px) 0 0;
+  border-right: none;
+}
+
+@media screen and (min-width: 450px) {
+  .TabLayout-tabs {
+    grid-template-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .TabLayout-tabs {
+    grid-template-columns:
+      calc(100% / 6) calc(100% / 6) calc(100% / 6) calc(100% / 6)
+      calc(100% / 6) calc(100% / 6);
+  }
+}

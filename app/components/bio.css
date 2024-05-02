@@ -1,0 +1,69 @@
+.Bio {
+  background-color: var(--title-color);
+  color: var(--bg-color);
+  display: grid;
+  align-content: center;
+  padding: 1.5rem;
+}
+
+.Bio-image {
+  width: 70%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: 50% 25%;
+  border-radius: 50%;
+  margin: 2.5rem auto;
+}
+
+.Bio-content {
+  font-size: 18px;
+  padding-top: 1.5rem;
+  width: 90%;
+}
+
+.Bio-title {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.Bio-text {
+  font-family: "Ubuntu Mono", monospace;
+}
+
+.Bio-button {
+  display: block;
+  text-align: center;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: var(--bg-color) !important;
+  font-weight: bold;
+  font-size: 20px;
+  border: outset 2px var(--bg-content-color);
+  border-radius: var(--radius);
+  margin: 20px auto 10px auto;
+  font-family: "Ubuntu Mono", monospace;
+}
+
+.Bio-button:hover {
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  transition: 0.25s;
+}
+
+@media screen and (min-width: 960px) {
+  .Bio {
+    height: 80vh;
+    grid-template-columns: 40% 60%;
+  }
+
+  .Bio-content {
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-height: 700px) {
+  .Bio {
+    height: fit-content;
+  }
+}

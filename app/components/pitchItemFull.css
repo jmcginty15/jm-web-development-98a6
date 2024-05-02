@@ -1,0 +1,46 @@
+.PitchItemFull {
+  min-height: 75vh;
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+.PitchItemFull-icon-container {
+  height: fit-content;
+  width: fit-content;
+  margin: calc(var(--space) * 2) auto var(--space) auto;
+  background-color: var(--bg-content-color);
+  color: var(--title-color);
+  border: solid var(--primary-color) 2px;
+  border-radius: 50%;
+  padding: 3rem;
+}
+
+.PitchItemFull-text {
+  font-family: "Ubuntu Mono", monospace;
+  height: fit-content;
+  width: 100%;
+  padding: 2rem;
+  margin: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .PitchItemFull-icon-container {
+    margin: var(--space) auto;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .PitchItemFull {
+    grid-template-columns: 40% 60%;
+  }
+
+  .PitchItemFull-icon-container {
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .PitchItemFull-text {
+    padding: 1rem;
+  }
+}

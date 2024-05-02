@@ -1,0 +1,75 @@
+.Header {
+  height: var(--header-height);
+  flex-shrink: 0;
+  background-color: var(--bg-color);
+  /* padding-left: 2rem;
+  padding-right: 2rem; */
+}
+
+.Header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 0 calc((var(--space) / 2));
+}
+
+.Header-Link {
+  text-decoration: none;
+}
+
+.Header-Logo {
+  width: var(--header-height);
+  height: var(--header-height);
+  fill: var(--title-color);
+}
+
+.Header-Logo:hover {
+  fill: var(--primary-color);
+}
+
+.Header-nav {
+  flex: 1;
+  height: 100%;
+  display: none;
+}
+
+@media screen and (min-width: 960px) {
+  .Header-nav {
+    display: flex;
+    align-items: stretch;
+    margin-left: 0.75rem;
+  }
+}
+
+.Header-nav > a {
+  color: white;
+}
+
+.Header-nav > a:hover {
+  color: var(--primary-color);
+}
+
+.Header-Link-nav {
+  position: relative;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.Header-Link-nav:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: var(--primary-color);
+  height: 2px;
+  transition: right 0.2s ease-out;
+}
+
+.Header-Link-nav:hover:before {
+  right: 0;
+}

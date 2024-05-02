@@ -1,0 +1,70 @@
+.PortfolioItem {
+  display: flex;
+  flex-flow: column;
+  grid-template-columns: 100%;
+  align-content: baseline;
+  height: fit-content;
+  background-color: var(--bg-color);
+  border-radius: var(--radius);
+  text-align: center;
+  transition: 0.25s;
+  box-shadow: 1px 1px 8px black;
+}
+
+.PortfolioItem-clickable {
+  height: 100%;
+}
+
+.PortfolioItem-clickable:hover {
+  cursor: pointer;
+  transform: scale(1.05, 1.05);
+  transition: 0.25s;
+  border: solid var(--primary-color) 1px;
+  background-color: black;
+}
+
+.PortfolioItem-photo {
+  width: 100%;
+  aspect-ratio: 17 / 9;
+  background-size: cover;
+  background-position: center top;
+  border-radius: var(--radius) var(--radius) 0 0;
+  border-bottom: solid 1px var(--title-color);
+}
+
+.PortfolioItem-content {
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+}
+
+.PortfolioItem-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.PortfolioItem-text {
+  flex-grow: 1;
+  font-size: 18px;
+}
+
+.PortfolioItem-button {
+  display: block;
+  text-align: center;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: var(--bg-color) !important;
+  font-weight: bold;
+  font-size: 20px;
+  border: outset 2px var(--bg-content-color);
+  border-radius: var(--radius);
+  margin: 20px auto 10px auto;
+  font-family: "Ubuntu Mono", monospace;
+}
+
+.PortfolioItem-button:hover {
+  cursor: pointer;
+  background-color: var(--secondary-color);
+}
