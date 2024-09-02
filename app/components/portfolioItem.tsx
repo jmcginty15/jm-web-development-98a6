@@ -10,7 +10,7 @@ export default function PortfolioItem({
 }) {
   const navigate = useNavigate();
 
-  const { title, url, description, photo, id } = item;
+  const { title, description, photo, adPhoto, id } = item;
 
   const handleClick = (evt: any, id: string) => {
     if (clickable && !(evt.target instanceof HTMLAnchorElement))
@@ -24,7 +24,9 @@ export default function PortfolioItem({
     >
       <div
         className="PortfolioItem-photo"
-        style={{ backgroundImage: `url(${photo})` }}
+        style={{
+          backgroundImage: `url(${clickable ? (adPhoto ? adPhoto : photo) : photo})`,
+        }}
       />
       <div className="PortfolioItem-content">
         <h2 className="PortfolioItem-title">

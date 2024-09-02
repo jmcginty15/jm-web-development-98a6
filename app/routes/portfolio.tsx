@@ -1,4 +1,4 @@
-import type { LinksFunction, V2_MetaFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import { Outlet } from "@remix-run/react";
 import portfolio from "../assets/portfolio.jpg";
 import HalfBanner from "~/components/halfBanner";
@@ -19,7 +19,7 @@ export const links: LinksFunction = () => [
   { rel: "canonical", href: `${MAIN_URL}/portfolio` },
 ];
 
-export const meta: V2_MetaFunction = () => [
+export const meta: MetaFunction = () => [
   {
     title:
       "JM Web Development LLC | Tulsa, Oklahoma | Topeka, Kansas | Portfolio",

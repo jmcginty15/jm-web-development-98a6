@@ -15,6 +15,19 @@ import jasonMcginty from "./assets/jason-mcginty.png";
 import ironRadio from "./assets/ironradio.jpg";
 import flexChess from "./assets/flexchess.jpg";
 import solarSystemExplorer from "./assets/solar-system-explorer.jpg";
+import smokeNVelvet from "./assets/smoke-n-velvet.png";
+import jamesTheBarber from "./assets/james-the-barber.png";
+import mcgintyForKs57th from "./assets/mcginty-for-ks-57th.png";
+
+import growingResilienceAd from "./assets/growing-resilience-ad.jpg";
+import mcgintyWeddingAd from "./assets/mcginty-wedding-ad.jpg";
+import dptTherapyAd from "./assets/dpt-therapy-ad.jpg";
+import jasonMcgintyAd from "./assets/jason-mcginty-ad.jpg";
+import ironRadioAd from "./assets/iron-radio-ad.jpg";
+import flexChessAd from "./assets/flex-chess-ad.jpg";
+import solarSystemExplorerAd from "./assets/solar-system-explorer-ad.jpg";
+import smokeNVelvetAd from "./assets/smoke-n-velvet-ad.jpg";
+import jamesTheBarberAd from "./assets/james-the-barber-ad.jpg";
 
 import growingResilienceFull from "./assets/growing-resilience-full.png";
 import mcgintyWeddingFull from "./assets/mcginty-wedding-full.png";
@@ -23,6 +36,9 @@ import jasonMcgintyFull from "./assets/jason-mcginty-full.png";
 import ironRadioFull from "./assets/iron-radio-full.png";
 import flexChessFull from "./assets/flexchess-full.png";
 import solarSystemExplorerFull from "./assets/solar-system-explorer-full.png";
+import smokeNVelvetFull from "./assets/smoke-n-velvet-full.png";
+import jamesTheBarberFull from "./assets/james-the-barber-full.png";
+import mcgintyForKs57thFull from "./assets/mcginty-for-ks-57th-full.png";
 
 export const ICON_SIZE = 80;
 
@@ -160,6 +176,7 @@ export interface PortfolioItemType {
   description: string;
   photo: string;
   detailPhoto: string;
+  adPhoto: string;
   id: string;
 }
 
@@ -169,7 +186,38 @@ export const portfolioItems: PortfolioItemType[] = [
     description: "Your site could be next. Get started now.",
     photo: underConstruction,
     detailPhoto: "",
+    adPhoto: "",
     id: "your-site-here",
+  },
+  {
+    title: "McGinty for Kansas District 57",
+    url: "https://mcgintyforkansas57th.com/",
+    description:
+      "Responsive campaign web site for my mom, Donna, who is running for the Kansas House of Representatives.",
+    photo: mcgintyForKs57th,
+    detailPhoto: mcgintyForKs57thFull,
+    adPhoto: "",
+    id: "mcginty-for-ks-57th",
+  },
+  {
+    title: "James the Barber",
+    url: "https://stillwaterbarber.com/",
+    description:
+      "Responsive business web site for James, an old-fashioned barber in Stillwater, Oklahoma.",
+    photo: jamesTheBarber,
+    detailPhoto: jamesTheBarberFull,
+    adPhoto: jamesTheBarberAd,
+    id: "james-the-barber",
+  },
+  {
+    title: "Smoke 'n Velvet",
+    url: "https://smokenvelvet.com/",
+    description:
+      "Responsive business web site for Melissa, a maker of custom smoking jackets in Stillwater, Oklahoma.",
+    photo: smokeNVelvet,
+    detailPhoto: smokeNVelvetFull,
+    adPhoto: smokeNVelvetAd,
+    id: "smoke-n-velvet",
   },
   {
     title: "Growing Resilience Permaculture",
@@ -178,6 +226,7 @@ export const portfolioItems: PortfolioItemType[] = [
       "Responsive business web site for Growing Resilience Permaculture, LLC, a permaculture design and garden consultation business based in Eastern Washington. Deployed with Azure Cloud Services. Parses RSS feed from Libsyn to serve podcast episode data.",
     photo: growingResilience,
     detailPhoto: growingResilienceFull,
+    adPhoto: growingResilienceAd,
     id: "growing-resilience-permaculture",
   },
   {
@@ -186,6 +235,7 @@ export const portfolioItems: PortfolioItemType[] = [
     description: `Responsive single-page React site I built for my wedding! I got married on February 5, 2023. Uses Google Sheets to keep track of RSVPs via the <a href="https://sheet.best/" target="_blank" rel="noreferrer">Sheet Best API</a>. Uses Google Maps React component to embed maps to relevant locations.`,
     photo: mcgintyWedding,
     detailPhoto: mcgintyWeddingFull,
+    adPhoto: mcgintyWeddingAd,
     id: "mcginty-wedding",
   },
   {
@@ -195,6 +245,7 @@ export const portfolioItems: PortfolioItemType[] = [
       "Responsive business web site for DPT Therapy & Performance, PLLC, a physical therapy clinic based in Stephenville, Texas. Deployed with Azure Cloud Services. Uses Google Maps React component to embed map of clinic location.",
     photo: dptTherapy,
     detailPhoto: dptTherapyFull,
+    adPhoto: dptTherapyAd,
     id: "dpt-therapy-and-performance",
   },
   {
@@ -203,6 +254,7 @@ export const portfolioItems: PortfolioItemType[] = [
     description: `My personal web site and blog which I built years ago using a <a href="https://www.gatsbyjs.com/" target="_blank" rel="noreferrer">Gatsby</a> template. Companion to this site, and the place where I post extra little projects and musings about literature.`,
     photo: jasonMcginty,
     detailPhoto: jasonMcgintyFull,
+    adPhoto: jasonMcgintyAd,
     id: "jason-mcginty",
   },
   {
@@ -212,6 +264,7 @@ export const portfolioItems: PortfolioItemType[] = [
       "Podcast hosting site built for a local Topeka, Kansas gym owner and strength coach. Hosts and serves RSS feed and MP3 files for use by podcatchers. Deployed with Microsoft Azure Cloud Services.",
     photo: ironRadio,
     detailPhoto: ironRadioFull,
+    adPhoto: ironRadioAd,
     id: "iron-radio",
   },
   {
@@ -220,6 +273,7 @@ export const portfolioItems: PortfolioItemType[] = [
     description: `Browser application built to allow users to create, run, and play in online chess tournaments on their own schedule. Uses the <a href="https://lichess.org/api" target="_blank" rel="noreferrer">Lichess.org API</a> to query player rating information and report game results.`,
     photo: flexChess,
     detailPhoto: flexChessFull,
+    adPhoto: flexChessAd,
     id: "flex-chess",
   },
   {
@@ -228,6 +282,7 @@ export const portfolioItems: PortfolioItemType[] = [
     description: `Browser application built to realistically depict the motions of the planets and moons of our solar system. Queries <a href="https://ssd.jpl.nasa.gov/" target="_blank" rel="noreferrer">NASA's JPL Horizons database</a> for real positions and velocities of solar system bodies at a selected date and time, then uses Newtonian physics to simulate motions of the bodies in space.`,
     photo: solarSystemExplorer,
     detailPhoto: solarSystemExplorerFull,
+    adPhoto: solarSystemExplorerAd,
     id: "solar-system-explorer",
   },
 ];
