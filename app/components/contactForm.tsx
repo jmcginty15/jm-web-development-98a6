@@ -1,6 +1,6 @@
-import { useRef, useState } from "react";
 import { Form, useNavigate } from "@remix-run/react";
-import emailjs from "emailjs-com";
+import { sendForm } from "emailjs-com";
+import { useRef, useState } from "react";
 
 export default function ContactForm({
   keys,
@@ -32,7 +32,11 @@ export default function ContactForm({
   const emailRegex = new RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i);
   const navigate = useNavigate();
 
-  const handleChange = (evt: any) => {
+  const handleChange = (
+    evt:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>,
+  ) => {
     if (evt.target.name === "phone") {
       let currentValue = evt.target.value.replace(/[\D]/g, "");
 
@@ -44,14 +48,14 @@ export default function ContactForm({
       else if (currentValue.length > 6)
         currentValue = `(${currentValue.slice(0, 3)}) ${currentValue.slice(
           3,
-          6
+          6,
         )}-${currentValue.slice(6, 10)}`;
 
       setFormData({ ...formData, phone: currentValue });
     } else setFormData({ ...formData, [evt.target.name]: evt.target.value });
   };
 
-  const handleSubmit = (evt: any) => {
+  const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
     const newErrors = { ...errors };
     newErrors.errors = false;
@@ -91,11 +95,11 @@ export default function ContactForm({
         emailInv: false,
         phone: false,
       });
-      emailjs.sendForm(
+      sendForm(
         keys.serviceId,
         keys.templateId,
-        evt.target,
-        keys.userId
+        evt.target as HTMLFormElement,
+        keys.userId,
       );
       setFormData({
         firstName: "",
@@ -124,9 +128,9 @@ export default function ContactForm({
         </h6>
         <h3 className="ContactForm-title">Consultations</h3>
         <h6>
-          I offer free consultations! If you're in the Tulsa/Stillwater area,
-          I'd be happy to meet up in person to discuss your project. Otherwise,
-          a phone call or video chat will work.
+          I offer free consultations! If you&apos;re in the Tulsa/Stillwater
+          area, I&apos;d be happy to meet up in person to discuss your project.
+          Otherwise, a phone call or video chat will work.
         </h6>
       </div>
       <Form className="ContactForm-form" method="POST" onSubmit={handleSubmit}>
@@ -144,9 +148,9 @@ export default function ContactForm({
               onChange={handleChange}
               value={formData.firstName}
             />
-            {errors.firstName && (
+            {errors.firstName ? (
               <div className="ContactForm-error">Required field</div>
-            )}
+            ) : null}
           </div>
           <div className="ContactForm-grid-item">
             <label className="ContactForm-title" htmlFor="lastName">
@@ -160,9 +164,9 @@ export default function ContactForm({
               onChange={handleChange}
               value={formData.lastName}
             />
-            {errors.lastName && (
+            {errors.lastName ? (
               <div className="ContactForm-error">Required field</div>
-            )}
+            ) : null}
           </div>
           <div className="ContactForm-grid-item">
             <label className="ContactForm-title" htmlFor="email">
@@ -176,12 +180,12 @@ export default function ContactForm({
               onChange={handleChange}
               value={formData.email}
             />
-            {errors.emailReq && (
+            {errors.emailReq ? (
               <div className="ContactForm-error">Required field</div>
-            )}
-            {errors.emailInv && (
+            ) : null}
+            {errors.emailInv ? (
               <div className="ContactForm-error">Invalid email format</div>
-            )}
+            ) : null}
           </div>
           <div className="ContactForm-grid-item">
             <label className="ContactForm-title" htmlFor="phone">
@@ -195,9 +199,9 @@ export default function ContactForm({
               onChange={handleChange}
               value={formData.phone}
             />
-            {errors.phone && (
+            {errors.phone ? (
               <div className="ContactForm-error">Required field</div>
-            )}
+            ) : null}
           </div>
         </div>
         <label className="ContactForm-title" htmlFor="contact">
@@ -257,9 +261,9 @@ export default function ContactForm({
           onChange={handleChange}
           value={formData.project}
         />
-        {errors.errors && (
+        {errors.errors ? (
           <div className="ContactForm-error">Check form errors</div>
-        )}
+        ) : null}
         <button className="ContactForm-button" type="submit">
           Submit
         </button>

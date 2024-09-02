@@ -1,14 +1,15 @@
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import { Outlet } from "@remix-run/react";
-import portfolio from "../assets/portfolio.jpg";
-import HalfBanner from "~/components/halfBanner";
-import { MAIN_URL } from "../config";
 
-import styles from "../portfolio.css";
-import stylesProcessItem from "../components/processItem.css";
+import HalfBanner from "~/components/halfBanner";
+
+import portfolio from "../assets/portfolio.jpg";
 import stylesAboutBio from "../components/aboutBio.css";
 import stylesHalfBanner from "../components/halfBanner.css";
 import stylesPortfolioItem from "../components/portfolioItem.css";
+import stylesProcessItem from "../components/processItem.css";
+import { MAIN_URL } from "../config";
+import styles from "../portfolio.css";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },

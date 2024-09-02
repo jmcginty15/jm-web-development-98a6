@@ -1,5 +1,5 @@
 import { cssBundleHref } from "@remix-run/css-bundle";
-import type { LinksFunction, LoaderArgs } from "@remix-run/node";
+import type { LinksFunction, LoaderFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import {
   Links,
@@ -9,21 +9,22 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import Header from "./components/header";
-import Footer from "./components/footer";
-import FooterNav from "./components/footerNav";
-import { indexMenuLinks } from "./components/config/menuLinks";
+import stylesRemixIcons from "remixicon/fonts/remixicon.css";
 
 import { getUser } from "~/session.server";
 import stylesheet from "~/tailwind.css";
-import stylesRoot from "./root.css";
+
+import { indexMenuLinks } from "./components/config/menuLinks";
+import Footer from "./components/footer";
+import stylesFooter from "./components/footer.css";
+import FooterNav from "./components/footerNav";
+import stylesFooterNav from "./components/footerNav.css";
+import Header from "./components/header";
 import stylesHeader from "./components/header.css";
 import stylesIndexNumber from "./components/indexNumber.css";
-import stylesSocialIcons from "./components/socialIcons.css";
-import stylesFooter from "./components/footer.css";
-import stylesFooterNav from "./components/footerNav.css";
 import stylesRotator from "./components/rotator.css";
-import stylesRemixIcons from "remixicon/fonts/remixicon.css";
+import stylesSocialIcons from "./components/socialIcons.css";
+import stylesRoot from "./root.css";
 
 export const links: LinksFunction = () => [
   {
@@ -46,7 +47,7 @@ export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 
-export const loader = async ({ request }: LoaderArgs) => {
+export const loader: LoaderFunction = async ({ request }) => {
   return json({ user: await getUser(request) });
 };
 

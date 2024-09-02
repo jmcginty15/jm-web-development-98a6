@@ -1,6 +1,6 @@
+import { socialIconList } from "./config/socialIconList";
 import Rotator from "./rotator";
 import SocialIcons from "./socialIcons";
-import { socialIconList } from "./config/socialIconList";
 
 export default function Footer() {
   return (

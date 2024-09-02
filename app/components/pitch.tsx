@@ -1,8 +1,9 @@
-import PitchItem from "./pitchItem";
 import { pitchItems } from "~/config";
 
+import PitchItem from "./pitchItem";
+
 interface PitchProps {
-  refProp: any;
+  refProp: React.RefObject<HTMLDivElement>;
 }
 
 export default function Pitch({ refProp }: PitchProps) {

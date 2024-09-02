@@ -1,4 +1,5 @@
 import { LinksFunction } from "@remix-run/node";
+
 import styles from "./indexNumber.css";
 
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];

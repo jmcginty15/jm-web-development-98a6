@@ -1,5 +1,6 @@
-import { Link } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
+import { Link } from "@remix-run/react";
+
 import handshake from "../assets/handshake.jpg";
 import stylesThankYou from "../thank-you.css";
 
@@ -14,7 +15,7 @@ export default function Route() {
         <div className="ThankYou-content">
           <h1 className="ThankYou-title">Thank you!</h1>
           <h3 className="ThankYou-subtitle">
-            I've received your request and will be in touch.
+            I&apos;ve received your request and will be in touch.
           </h3>
           <h3 className="ThankYou-subtitle">
             I look forward to doing business with you!

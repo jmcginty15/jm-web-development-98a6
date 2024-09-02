@@ -1,8 +1,8 @@
 import Developer from "./developer";
-import Scales from "./scales";
 import DraftingTools from "./draftingTools";
-import Racecar from "./racecar";
 import Phone from "./phone";
+import Racecar from "./racecar";
+import Scales from "./scales";
 import ThumbsUp from "./thumbsUp";
 
 export default function IconSwitch({

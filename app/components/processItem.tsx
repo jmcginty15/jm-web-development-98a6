@@ -1,15 +1,14 @@
-import IconSwitch from "~/assets/iconSwitch";
 import Parser from "html-react-parser";
-import { useState } from "react";
+import { RefObject, useState } from "react";
 
 export interface ProcessItemProps {
   title: string;
   description: string[];
   photo: string;
   photoAlt: string;
-  advanceItem?: Function;
+  advanceItem?: () => void;
   next?: boolean;
-  photoRef?: any;
+  photoRef?: RefObject<HTMLDivElement>;
 }
 
 export default function ProcessItem({

@@ -1,4 +1,5 @@
 import { LoaderFunction } from "@remix-run/node";
+
 import { MAIN_URL } from "../config";
 
 export const loader: LoaderFunction = () => {

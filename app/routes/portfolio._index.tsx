@@ -1,5 +1,5 @@
-import { portfolioItems } from "../config";
 import PortfolioItem from "../components/portfolioItem";
+import { portfolioItems } from "../config";
 
 export default function PortfolioIndexPage() {
   return (

@@ -3,7 +3,7 @@ import { PrismaClient } from "@prisma/client";
 let prisma: PrismaClient;
 
 declare global {
-  var __db__: PrismaClient | undefined;
+  var __db__: PrismaClient | undefined; // eslint-disable-line no-var
 }
 
 // This is needed because in development we don't want to restart

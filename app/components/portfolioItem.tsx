@@ -1,4 +1,7 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+
 import { useNavigate } from "@remix-run/react";
+
 import type { PortfolioItemType } from "~/config";
 
 export default function PortfolioItem({
@@ -12,7 +15,12 @@ export default function PortfolioItem({
 
   const { title, description, photo, adPhoto, id } = item;
 
-  const handleClick = (evt: any, id: string) => {
+  const handleClick = (
+    evt:
+      | React.MouseEvent<HTMLDivElement, MouseEvent>
+      | React.KeyboardEvent<HTMLDivElement>,
+    id: string,
+  ) => {
     if (clickable && !(evt.target instanceof HTMLAnchorElement))
       navigate(id === "your-site-here" ? "/process" : `/portfolio/${id}`);
   };
@@ -21,6 +29,7 @@ export default function PortfolioItem({
     <div
       className={`PortfolioItem${clickable ? " PortfolioItem-clickable" : ""}`}
       onClick={(evt) => handleClick(evt, id)}
+      onKeyDown={(evt) => handleClick(evt, id)}
     >
       <div
         className="PortfolioItem-photo"

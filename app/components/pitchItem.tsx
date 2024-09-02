@@ -1,4 +1,7 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+
 import { useNavigate } from "@remix-run/react";
+
 import IconSwitch from "~/assets/iconSwitch";
 
 export interface PitchItemProps {
@@ -24,7 +27,11 @@ export default function PitchItem({
   const navigate = useNavigate();
 
   return (
-    <div className="PitchItem" onClick={() => navigate(`/about?item=${route}`)}>
+    <div
+      className="PitchItem"
+      onClick={() => navigate(`/about?item=${route}`)}
+      onKeyDown={() => navigate(`/about?item=${route}`)}
+    >
       <div className="PitchItem-icon">
         <IconSwitch iconName={iconName} />
       </div>

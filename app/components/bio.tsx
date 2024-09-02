@@ -1,4 +1,5 @@
 import { Link } from "@remix-run/react";
+
 import wife from "../assets/wife2.jpg";
 
 export default function Bio() {
@@ -6,11 +7,11 @@ export default function Bio() {
     <div className="Bio">
       <img className="Bio-image" src={wife} alt="addie-and-jason" />
       <div className="Bio-content">
-        <h2 className="Bio-title">Hi, I'm Jason!</h2>
+        <h2 className="Bio-title">Hi, I&apos;m Jason!</h2>
         <p className="Bio-text">
-          I've been working as web developer since 2020, doing a little bit of
-          everything: frontend, backend, full stack; working for companies and
-          taking on clients as a freelancer. I started JM Web Development{" "}
+          I&apos;ve been working as web developer since 2020, doing a little bit
+          of everything: frontend, backend, full stack; working for companies
+          and taking on clients as a freelancer. I started JM Web Development{" "}
           <small>LLC</small> in 2023 with the goal of putting my skills to use
           for small businesses both in the Tulsa area and around the country.
         </p>

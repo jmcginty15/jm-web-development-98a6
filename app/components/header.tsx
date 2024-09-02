@@ -1,8 +1,10 @@
 import { Link } from "@remix-run/react";
+
 import Logo from "../assets/logo";
-import SocialIcons from "./socialIcons";
+
 import { socialIconList } from "./config/socialIconList";
 import IndexNumberedLinkName from "./indexNumber";
+import SocialIcons from "./socialIcons";
 
 interface HeaderProps {
   menuLinks: {

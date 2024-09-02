@@ -15,7 +15,7 @@ export default function SocialIcons({ icons }: SocialIconsProps) {
         href={link}
         key={link}
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
         aria-label={`social link to ${link}`}
       >
         <Icon iconName={name} />

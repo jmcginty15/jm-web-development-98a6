@@ -1,21 +1,22 @@
 import type {
   LinksFunction,
-  V2_MetaFunction,
+  MetaFunction,
   LoaderFunction,
 } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 import { useRef } from "react";
-import processPhoto from "../assets/process.jpg";
+
+import ContactForm from "~/components/contactForm";
 import HalfBanner from "~/components/halfBanner";
 import ProcessTabLayout from "~/components/processTabLayout";
-import ContactForm from "~/components/contactForm";
-import { MAIN_URL } from "../config";
 
-import stylesProcessTabLayout from "../components/processTabLayout.css";
-import stylesProcessItem from "../components/processItem.css";
+import processPhoto from "../assets/process.jpg";
 import stylesAboutBio from "../components/aboutBio.css";
 import stylesContactForm from "../components/contactForm.css";
 import stylesHalfBanner from "../components/halfBanner.css";
-import { useLoaderData } from "@remix-run/react";
+import stylesProcessItem from "../components/processItem.css";
+import stylesProcessTabLayout from "../components/processTabLayout.css";
+import { MAIN_URL } from "../config";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesProcessTabLayout },
@@ -26,7 +27,7 @@ export const links: LinksFunction = () => [
   { rel: "canonical", href: `${MAIN_URL}/process` },
 ];
 
-export const meta: V2_MetaFunction = () => [
+export const meta: MetaFunction = () => [
   {
     title:
       "JM Web Development LLC | Tulsa, Oklahoma | Topeka, Kansas | My Process",
@@ -48,7 +49,11 @@ export const loader: LoaderFunction = () => {
 
 export default function Route() {
   const formRef = useRef<HTMLDivElement>(null);
-  const keys = useLoaderData();
+  const keys = useLoaderData<{
+    serviceId: string;
+    templateId: string;
+    userId: string;
+  }>();
 
   const scrollToForm = () =>
     formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });

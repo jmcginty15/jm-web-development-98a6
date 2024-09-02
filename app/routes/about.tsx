@@ -1,23 +1,24 @@
 import type {
   LinksFunction,
   LoaderFunction,
-  V2_MetaFunction,
+  MetaFunction,
 } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { useRef, useEffect } from "react";
 import { RiArrowRightSLine, RiArrowDownSLine } from "react-icons/ri";
-import TabLayout from "~/components/tabLayout";
-import AboutBio from "~/components/aboutBio";
-import topeka from "../assets/topeka-ks.jpg";
-import tulsa from "../assets/tulsa-ok.jpg";
+
 import Logo from "~/assets/logo";
-import { pitchItems } from "~/config";
-import { MAIN_URL } from "../config";
+import AboutBio from "~/components/aboutBio";
+import { PitchItemProps } from "~/components/pitchItem";
+import TabLayout from "~/components/tabLayout";
+import { pitchItems, MAIN_URL } from "~/config";
 
 import styles from "../about.css";
-import stylesTabLayout from "../components/tabLayout.css";
-import stylesPitchItemFull from "../components/pitchItemFull.css";
+import topeka from "../assets/topeka-ks.jpg";
+import tulsa from "../assets/tulsa-ok.jpg";
 import stylesAboutBio from "../components/aboutBio.css";
+import stylesPitchItemFull from "../components/pitchItemFull.css";
+import stylesTabLayout from "../components/tabLayout.css";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
@@ -27,7 +28,7 @@ export const links: LinksFunction = () => [
   { rel: "canonical", href: `${MAIN_URL}/about` },
 ];
 
-export const meta: V2_MetaFunction = () => [
+export const meta: MetaFunction = () => [
   {
     title: "JM Web Development LLC | Tulsa, Oklahoma | Topeka, Kansas | About",
   },
@@ -43,13 +44,13 @@ export const loader: LoaderFunction = ({ request }) => {
   const pitchItem = url.searchParams.get("item");
   const ref = url.searchParams.get("ref");
   if (pitchItem)
-    for (let item of pitchItems) if (pitchItem === item.route) return item;
+    for (const item of pitchItems) if (pitchItem === item.route) return item;
   if (ref) return ref;
   return null;
 };
 
 export default function Route() {
-  const data = useLoaderData();
+  const data = useLoaderData<PitchItemProps>();
   const tabRef = useRef<HTMLDivElement>(null);
   const bioRef = useRef<HTMLDivElement>(null);
 
@@ -58,7 +59,7 @@ export default function Route() {
       bioRef.current!.scrollIntoView({ behavior: "smooth", block: "center" });
     else if (data)
       tabRef.current!.scrollIntoView({ behavior: "smooth", block: "center" });
-  }, []);
+  });
 
   const goToItem = typeof data === "string" ? null : data;
 

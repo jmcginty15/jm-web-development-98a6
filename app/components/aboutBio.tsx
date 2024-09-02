@@ -1,7 +1,7 @@
 import me from "../assets/me.jpg";
 
 interface AboutBioProps {
-  refProp: any;
+  refProp: React.RefObject<HTMLDivElement>;
 }
 
 export default function AboutBio({ refProp }: AboutBioProps) {
@@ -30,7 +30,7 @@ export default function AboutBio({ refProp }: AboutBioProps) {
           </a>{" "}
           in February 2023 and my wife and I had our first child, Katharin, in
           December. One thing I love about my work is that I can do it from
-          home, so there's no need to be away from my family.
+          home, so there&apos;s no need to be away from my family.
         </p>
         <p className="AboutBio-text">
           Besides my main work as a web developer, I have dabbled a bit in
@@ -43,7 +43,7 @@ export default function AboutBio({ refProp }: AboutBioProps) {
           >
             Unity
           </a>
-          -based mobile app currently in development, based on Euclid's{" "}
+          -based mobile app currently in development, based on Euclid&apos;s{" "}
           <em>Elements of Geometry</em> and due to be released in 2024.
         </p>
         <p className="AboutBio-text">

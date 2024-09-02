@@ -1,7 +1,9 @@
-import { PitchItemProps } from "./pitchItem";
-import IconSwitch from "~/assets/iconSwitch";
 import Parser from "html-react-parser";
 import { useState } from "react";
+
+import IconSwitch from "~/assets/iconSwitch";
+
+import { PitchItemProps } from "./pitchItem";
 
 export default function PitchItemFull({
   iconName,

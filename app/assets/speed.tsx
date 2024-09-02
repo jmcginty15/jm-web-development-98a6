@@ -1,10 +1,4 @@
-interface LogoProps {
-  className?: string;
-  scale?: number;
-}
-
-export default function Speed({ className = "", scale = 0.1 }: LogoProps) {
-  const scaleFactor = scale / 0.1;
+export default function Speed() {
   return (
     <svg
       fill="currentColor"
@@ -14,7 +8,7 @@ export default function Speed({ className = "", scale = 0.1 }: LogoProps) {
       width="800px"
       height="800px"
       viewBox="0 0 512 512"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
     >
       <g>
         <path

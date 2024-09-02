@@ -1,19 +1,36 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+
 import { useState, useRef } from "react";
-import ProcessItem from "./processItem";
+
 import { processItems } from "~/config";
-import { ProcessItemProps } from "./processItem";
+
+import ProcessItem, { ProcessItemProps } from "./processItem";
+
+interface ProcessTabsWideProps {
+  activeItem: ProcessItemProps;
+  windowWidth: number;
+  setActiveItem: (item: ProcessItemProps) => void;
+  setActiveIndex: (index: number) => void;
+}
+
+interface ProcessTabsNarrowProps {
+  activeItem: ProcessItemProps;
+  activeIndex: number;
+  setActiveItem: (item: ProcessItemProps) => void;
+  setActiveIndex: (index: number) => void;
+}
 
 export default function ProcessTabLayout({
   scrollToForm,
 }: {
-  scrollToForm?: Function;
+  scrollToForm?: () => void;
 }) {
   const photoRef = useRef<HTMLDivElement>(null);
 
   const [columnsSet, setColumnsSet] = useState<boolean>(false);
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [activeItem, setActiveItem] = useState<ProcessItemProps>(
-    processItems[0]
+    processItems[0],
   );
   const [columnsWide, setColumnsWide] = useState<boolean>(true);
   const [windowWidth, setWindowWidth] = useState<number>(1000);
@@ -78,7 +95,7 @@ function ProcessTabsWide({
   windowWidth,
   setActiveItem,
   setActiveIndex,
-}: any) {
+}: ProcessTabsWideProps) {
   return (
     <div className="ProcessTabLayout-tabs">
       {processItems.map((item, index) => (
@@ -87,8 +104,8 @@ function ProcessTabsWide({
             index === 0
               ? "left"
               : index === processItems.length - 1
-              ? "right"
-              : "center"
+                ? "right"
+                : "center"
           }`}
           id={`${
             activeItem.title === item.title
@@ -97,6 +114,10 @@ function ProcessTabsWide({
           }`}
           key={item.title}
           onClick={() => {
+            setActiveItem(processItems[index]);
+            setActiveIndex(index);
+          }}
+          onKeyDown={() => {
             setActiveItem(processItems[index]);
             setActiveIndex(index);
           }}
@@ -119,7 +140,7 @@ function ProcessTabsNarrow({
   activeIndex,
   setActiveItem,
   setActiveIndex,
-}: any) {
+}: ProcessTabsNarrowProps) {
   const stylesArray = new Array(5).fill("calc((100% * (2 / 3)) / 4)");
   stylesArray[activeIndex] = "calc(100% / 3)";
 
@@ -134,8 +155,8 @@ function ProcessTabsNarrow({
             index === 0
               ? "left"
               : index === processItems.length - 1
-              ? "right"
-              : "center"
+                ? "right"
+                : "center"
           }`}
           id={`${
             activeItem.title === item.title
@@ -147,13 +168,17 @@ function ProcessTabsNarrow({
             setActiveItem(processItems[index]);
             setActiveIndex(index);
           }}
+          onKeyDown={() => {
+            setActiveItem(processItems[index]);
+            setActiveIndex(index);
+          }}
         >
           <span className="ProcessTabLayout-button-inner">
             <span className="ProcessTabLayout-indexNumber">
               {`0${index + 1}`}.
             </span>
             <br />
-            {index === activeIndex && item.title}
+            {index === activeIndex ? item.title : null}
           </span>
         </div>
       ))}
